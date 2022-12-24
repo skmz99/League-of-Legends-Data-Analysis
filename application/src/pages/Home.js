@@ -4,6 +4,7 @@ import '../css/home.css'
 function Home(){
     var Summary = "LOL_Icon.jpg";
     const [championName, setchampionName] = useState();
+    const [dataSet, setdataSet] = useState();
     const [isBusy,setBusy] = useState(true);
     useEffect(() =>{
         setBusy(true);
@@ -12,6 +13,13 @@ function Home(){
         .then((value) => {setchampionName(value.result);})
         setBusy(false);
     },[])
+
+    useEffect(() =>{
+        fetch('http://localhost:5000/allVar')
+        .then((res) => {return res.json();})
+        .then((value) => {setdataSet(value.result)})
+    },[])
+
     if(!isBusy){
         return(
             <div className='Home'>
@@ -27,7 +35,17 @@ function Home(){
                             })}
                         </div>
                     </div>
-                    <div className={"center"}>This poroject will focus on a League of Legends csv file and will output graphs/charts and other statistics</div>
+                    <div className={"center"}>
+                        {dataSet === undefined ? (
+                            'Loading...'
+                            ):(
+                                <React.Fragment>
+                                This project will focus on a League of Legends csv file and will output graphs/charts and other statistics
+                                {console.log(dataSet) }
+                                </React.Fragment>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         );
