@@ -13,4 +13,11 @@ const view = (req,res,next) =>{
     res.json({message: "POST IDK"});
 };
 
-module.exports = {distinctChampionName,view};
+const viewAll = (req,res,next) =>{
+    command.viewAll()
+    .then((result)=>{
+        res.json({result})
+    })
+}
+
+module.exports = {distinctChampionName,view,viewAll};

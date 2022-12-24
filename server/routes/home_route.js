@@ -7,4 +7,6 @@ router.get('/view',home_controller.view);
 
 router.get('/championName',home_controller.distinctChampionName);
 
+router.get('/allVar', home_controller.viewAll);
+
 module.exports = router;
