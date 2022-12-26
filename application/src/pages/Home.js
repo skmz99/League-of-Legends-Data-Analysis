@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import '../css/home.css'
 
 function Home(){
-    var Summary = "LOL_Icon.jpg";
     const [championName, setchampionName] = useState();
+    const [displayChamp, setdisplayChamp] = useState('LOL_Icon');
     const [dataSet, setdataSet] = useState();
     const [isBusy,setBusy] = useState(true);
+
     useEffect(() =>{
         setBusy(true);
         fetch('http://localhost:5000/championName')
@@ -26,22 +27,22 @@ function Home(){
                 <h1>Home Page</h1>
                 <div className={"rounded_container"}>
                     <div className={"dropdown"}>
-                        <button className={"top_left"}><img src={require(`../imgs/${Summary}`)} alt="Default League of Legends Icon"/></button>
+                        <img className={"top_left"} src={require(`../imgs/${displayChamp}.jpg`)} alt = "Default League of Legends Icon"/>
                         <div className={"dropdown_content"}>        
                             {championName && championName.map((value,key) =>{
                                 return(
-                                    <p key={key}><img id="img" src={require(`../imgs/${value.championName}.jpg`)} alt = "CHAMPION NAME"/>{value.championName}</p>
-                                )
-                            })}
+                                    <button key={key} onClick={()=>setdisplayChamp(value.championName)}><img id="img" src={require(`../imgs/${value.championName}.jpg`)} alt = "CHAMPION NAME"/>{value.championName}</button>
+                                    )
+                                })}
                         </div>
                     </div>
                     <div className={"center"}>
                         {dataSet === undefined ? (
                             'Loading...'
                             ):(
-                                <React.Fragment>
+                                <React.Fragment> {/* React.Fragement allows for more than one component */}
                                 This project will focus on a League of Legends csv file and will output graphs/charts and other statistics
-                                {console.log(dataSet) }
+                                {/* {console.log(dataSet) } */}
                                 </React.Fragment>
                             )
                         }

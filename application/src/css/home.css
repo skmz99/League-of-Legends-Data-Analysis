@@ -47,14 +47,14 @@
 }
 
 .dropdown_content{
-    display: none;
+    display: none; /* makes the dropdown content only show when hovered */
     position: absolute;
     margin: 0 auto;
-    background-color: black;
-    min-width: 160px;
+    background-color: black; /* background is black */
+    min-width: 180px; /* height of the dropdown content of what shows  */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    max-height: 120px;
+    max-height: 190px; /* length of width */
     overflow: auto;
 }
 
@@ -66,6 +66,11 @@
     /* border-radius: 230px; */
     text-decoration: none;
     display: block;
+}
+
+.dropdown button{
+    color: white;
+    background-color: black;
 }
 
 .dropdown_content a:hover {background-color: #f1f1f1;}
