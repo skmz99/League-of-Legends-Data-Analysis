@@ -11,7 +11,7 @@ championName(){
     }
 
 viewAll(){
-    return this.all(`SELECT * FROM dataset`);
+    return this.all(`SELECT * FROM dataset ORDER BY championName ASC`);
     }
 }
 
