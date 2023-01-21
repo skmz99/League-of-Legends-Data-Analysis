@@ -12,12 +12,12 @@ const columns=[
     {key: "deaths", width:250, title:"Deaths"},
     {key: "dragonKills", width:250, title:"Dragon_Kills"},
     {key: "firstBloodAssist", width:250, title:"FirstBlood_Assists"},
-    {key: "firstBllodKill", width:250, title:"First_Blood"},
+    {key: "firstBloodKill", width:250, title:"First_Blood"},
     {key: "gameEndedInSurrender", width:250, title:"Surrender"},
     {key: "goldEarned", width:250, title: "Gold_Earned"},
     {key: "goldSpent", width:250, title: "Gold_Spent"},
     {key: "individualPosition", width:250, title: "Lane"},
-    {key: "inhibitoKills", width:250, title: "Enemy_Inhibitor_Destroyed"},
+    {key: "inhibitorKills", width:250, title: "Enemy_Inhibitor_Destroyed"},
     {key: "inhibitorsLost", width:250, title: "Teams_Inhibitor_Destoryed"},
     {key: "item0", width:250, title: "Item_0"},
     {key: "item1", width:250, title: "Item_1"},
@@ -26,8 +26,9 @@ const columns=[
     {key: "item4", width:250, title: "Item_4"},
     {key: "item5", width:250, title: "Item_5"},
     {key: "item6", width:250, title: "Item_6"},
+    {key: "kills", width:250, title: "Kills"},
     {key: "largestCriticalStrike", width:250, title: "Largest_Crit_Strike"},
-    {key: "largetKillingSpree", width:250, title: "Longest_Killing_Spree"},
+    {key: "largestKillingSpree", width:250, title: "Largest_Killing_Spree"},
     {key: "longestTimeSpentLiving", width:250, title:"Longest_Time_Alive"},
     {key: "magicDamageDealtToChampions", width:250, title:"Magic_Damage"},
     {key: "objectivesStolen", width:250, title: "Objective_Stolen"},
@@ -40,7 +41,7 @@ const columns=[
     {key: "summoner1Casts", width:250, title: "D_Casted"},
     {key: "summoner2Casts", width:250, title: "F_Casted"},
     {key: "teamEarlySurrendered", width:250, title: "Team_Surrender"},
-    {key: "timeCCingOther", width:250, title: "Time_CC_Others"},
+    {key: "timeCCingOthers", width:250, title: "Time_CC_Others"},
     {key: "timePlayed", width:250, title: "Game_Total_Time"},
     {key: "totalDamageDealtToChampions", width:250, title: "Total_Damage_To_Champs"},
     {key: "totalDamageShieldedOnTeammates", width:250, title: "Shelded_Damage_On_Teammates"},
@@ -52,12 +53,26 @@ const columns=[
     {key: "trueDamageDealtToChampions", width:250, title: "True_Damage_Towards_Champs"},
     {key: "trueDamageTaken", width:250, title: "True_Damage_Taken"},
     {key: "turretTakedowns", width:250, title: "Turret_Takedowns"},
-    {key: "turretLost", width:250, title: "Turrets_Lost"},
+    {key: "turretsLost", width:250, title: "Turrets_Lost"},
     {key: "visionScore", width:250, title: "Vision_Score"},
     {key: "visionWardsBoughtInGame", width:250, title: "Vision_Ward_Bought"},
     {key: "wardsKilled", width:250, title: "Wards_Destroyed"},
-    {key: "wardsPlaces", width:250, title: "Ward_Placed"},
+    {key: "wardsPlaced", width:250, title: "Ward_Placed"},
     {key: "win", width:250, title: "win"}
 ];
 
-export {columns}
+const x_labels = ['Top', 'Middle', 'Jungle', 'Bottom', 'Support'];
+
+const graphButtonOptions = [
+    'assists', 'Baron_Kills', 'Champion_EXP', 'Champion_Level', 
+    'Objective_Damage', 'Damage_selfMitigated','Deaths', 'Dragon_Kills', 'FirstBlood_Assits', 'First_Blood',
+    'Surrendered', 'Gold_Earned', 'Gold_Spent', 'Lane', 'Enemy_Inhibitor_Destroyed',
+    'Kills', 'Crit_Strike', 'Killing_Spree', 'Time_Alive', 'Magic_Damage', 'Objective_Stolen',
+    'Physical_Damage', 'Physical_Damage_Taken', 'Q_Casted', 'W_Casted', 'E_Casted', 'R_Casted',
+    'D_Casted', 'F_Casted', 'Time_CC_Others', 'Game_Total_Time', 'Total_Damage_To_champs',
+    'Shelded_Damage_On_Teammates', 'Total_Heal', 'Total_Heal_Towards_Teammates', 'Total_Minions_Killed',
+    'Total_Time_Dead', 'True_Damage_Towards_Champs', 'True_Damage_Taken', 'Turret_Takedowns',
+    'Turrets_Lost', 'Vision_Score', 'Vision_Ward_Bought', 'Wards_Destroyed', 'Wards_Placed', 'Wins'];
+
+
+export {columns, x_labels, graphButtonOptions}
