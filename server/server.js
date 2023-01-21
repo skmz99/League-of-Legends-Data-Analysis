@@ -1,16 +1,11 @@
 const express = require('express')
 const app = express()
 const routes = require('./routes/home_route');
-app.use(express.json());
-// const sqlite3 = require('sqlite3');
+var cors = require('cors');
+app.use(cors());
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({extended:true, limit: '50mb', parameterLimit: 50000}))
 
-// let db = new sqlite3.Database(":memory:", (err) =>{
-//     if(err){
-//         console.log("Error Occurred - " + err.message);
-//     }else{
-//         console.log("DataBase Connected");
-//     }
-// })
 
 app.all('/*', function(req,res,next) {
     res.header('Access-Control-Allow-Origin','*');
