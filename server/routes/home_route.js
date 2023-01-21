@@ -9,4 +9,10 @@ router.get('/championName',home_controller.distinctChampionName);
 
 router.get('/allVar', home_controller.viewAll);
 
+router.all('/champData', home_controller.champData);
+
+router.all('/champGraph', home_controller.champGraph);
+
+router.all('/script', home_controller.randomForest);
+
 module.exports = router;
