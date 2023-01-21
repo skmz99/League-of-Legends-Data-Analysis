@@ -1,14 +1,3 @@
-.rounded_container {
-    position: relative;
-    border-radius: 20px;
-    max-height: 100%;
-    max-width: 100%;
-    border: 2px solid rgb(71, 71, 71);
-    background-color: rgb(207, 207, 207);
-    padding: 20%  20%;
-    margin: 0 auto;
-}
-
 .center{
     font-size: 20px;
     position: absolute;
@@ -17,109 +6,168 @@
     transform: translateX(-50%) translateY(-50%);
 }
 
-.top_left{
-    border-radius: 15px;
-    border: 2px solid black;
-    height: 60px;
-    width: 60px;
-    padding: 0 0;
-    /* padding: 16px 16px; */
-    cursor: pointer;
+.center_Summary{
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    bottom: 0;
+    height: 74%;
+    min-width: 99%;
+    min-height:100%;
 }
 
-.top_left img {
-    padding: 0 0;
-    border-radius: 13px;
-    object-fit: fill;
-    height: 100%;
-    width: 100%;
+.hidden{
+    opacity: 30%;
 }
 
-.dropdown_content img{
-    padding: 0 0;
-    object-fit: contain;
-    height: 50px;
-    width: 50px;
-}
-
-.dropdown{
+/* Container */
+.rounded_container{
     position: relative;
-    border-radius: 30px;
-    border: 2px black;
-    margin: -30% 0 0 -30%;
-    float: left;
-    display:block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+    border: 2px solid rgb(71,71,71);
+    background-color: rgb(207,207,207);
+    margin: 0 auto;
+    padding: 20% 20%;
 }
 
-.dropbtn {
-    font-size: 16px;
-    border: none;
+.rounded_container ul{
+    position: absolute;
+    /* padding: 0 300px 7px; */
+    align-items: center;
+    gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    top: 7%;
+    flex-wrap: wrap;
 }
 
-.dropdown_content{
-    display: none; /* makes the dropdown content only show when hovered */
+.rounded_container button{
+    color: white;
+    background-color: gray;
+    font-size: 18px;
+}
+
+/* End of Container */
+
+/* Graph DropDown Option */
+
+.GraphDropdown{
+    margin: 0 auto;
+    position: relative;
+}
+
+.GraphDropdown_Content{
+    display: none;
     position: absolute;
     margin: 0 auto;
-    background-color: black; /* background is black */
-    min-width: 180px; /* height of the dropdown content of what shows  */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 200%;
+    background-color: gray;
+    /* min-width: 20.5%; */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
-    max-height: 190px; /* length of width */
+    max-height: 200px;
     overflow: auto;
 }
 
-.dropdown_content p{
-    color: white;
-    margin: 0 0;
-    padding: 0 0;
-    /* padding: 1px 1px; */
-    /* border-radius: 230px; */
-    text-decoration: none;
-    display: block;
+.GraphDropdown_Content button{
+    font-size: 18px;
+    object-fit: fill;
+    border: none;
+    border-color: gray;
 }
 
-.dropdown button{
+.GraphDropdown a:hover {background-color: #f1f1f1;}
+.GraphDropdown:hover .GraphDropdown_Content{display: block;}
+
+.graphContainer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 94%;
+    width: 100%;
+}
+
+
+/* End of Graph DropDown Option */
+
+
+/* Champ DropDown */
+
+.dropDown{
+    position: absolute;
+    border-radius: 30px;
+    border: 2px black;
+    margin: 0 -80px;
+}
+
+.dropDown img{
+    border-radius: 25%;
+    object-fit: fill;
+    height: 60px;
+    width: 60px;
+    border: 2px solid black;
+}
+
+.dropDown_Content{
+    display: none;
+    position: absolute;
+    margin: 0 auto;
+    background-color: black;
+    min-width: 200px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.dropDown_Content img{
+    padding: 0 0;
+    object-fit: contain;
+    height: 66px;
+    width: 66px;
+}
+
+.dropDown button{
     color: white;
     background-color: black;
 }
 
-.dropdown_content a:hover {background-color: #f1f1f1;}
+.dropDown_Content a:hover {background-color: #f1f1f1;}
+.dropDown:hover .dropDown_Content{display: block;}
+/* End of Champ DropDown */
 
-.dropdown:hover .dropdown_content{
-    display: block;
-}
-
-.rounded_container > .center{
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
+/* Table */
 .table_container{
     position: absolute;
     bottom: 0;
-    width: 98.2%;
+    width: 97.2%;
     height: 71%;
-    /* overflow: scroll; */
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: hidden;
     border-radius: 20px;
-    /* border: 2px solid gray; */
-    background-color: rgb(207, 207, 207);
+    background-color: rgb(207,207,207);
     padding: 10px 10px;
-    margin: 0 0 0 -20%;
+    /* margin: 0 0 0 -20.01%; */
 }
 
 table{
-    /* overflow: scroll; */
-    /* table-layout: fixed; */
-    border: 5px solid black;
+    overflow: scroll;
+    table-layout: fixed;
+    margin: 0.5px auto;
+    bottom: 0;
+    border: 2px solid black;
     width: 100%;
 }
 
-.th {
+.th{
     border-style: gray;
     border-width: 1px;
     word-wrap: break-word;
@@ -129,5 +177,6 @@ table{
 .td{
     border-width: 5px;
     word-wrap: break-word;
-    border-bottom: 1px solid rgb(124, 124, 124);
+    border-bottom: 1px solid rgb(124,124,124);
 }
+/* End of Table */
