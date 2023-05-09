@@ -11,7 +11,7 @@ class leagueCommand extends Table{
         }
 
     viewAll(){
-        return this.all(`SELECT * FROM dataset ORDER BY championName ASC`);
+        return this.all(`SELECT * FROM dataset LIMIT 100`);
         }
 
     champData(Name){
